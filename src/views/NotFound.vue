@@ -1,6 +1,11 @@
 <template>
     <div>
-        当前路径不存在，输入正确路径
+        <div>
+            <div>
+                当前路径不存在，输入正确路径
+            </div>
+        </div>
+        <router-link to="/">返回首页</router-link>
     </div>
 </template>
 
