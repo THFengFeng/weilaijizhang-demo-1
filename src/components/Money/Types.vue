@@ -1,15 +1,16 @@
 <template>
     <div>
         <ul class="types">
-            <li :class="value === '-' && 'selected'"
+            <li :class="type === '-' && 'selected'"
                 @click="selectType('-')">支出
             </li>
-            <li :class="value === '+' && 'selected'"
+            <li :class="type === '+' && 'selected'"
                 @click="selectType('+')">收入
             </li>
         </ul>
     </div>
 </template>
+
 
 <script lang="ts">
     import Vue from "vue";
@@ -17,15 +18,15 @@
 
     @Component
     export default class Types extends Vue {
-        @Prop() readonly value!: string;
-
-        selectType(type: string) {
+        type = "-"; // '-'表示支出，'+'表示收入
+        selectType(type: string) { // type 只能是 '-' 和 '+' 中的一个
             if (type !== "-" && type !== "+") {
                 throw new Error("type is unknown");
             }
-            this.$emit("update:value", type);
+            this.type = type;
         }
     }
+
 </script>
 
 <style lang="scss" scoped>

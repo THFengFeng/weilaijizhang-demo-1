@@ -13,6 +13,7 @@
         </ul>
     </div>
 </template>
+
 <script lang="ts">
     import Vue from "vue";
     import {Component, Prop} from "vue-property-decorator";
@@ -57,8 +58,7 @@
             flex-wrap: wrap;
 
             > li {
-                $bg: #d9d9d9;
-                background: $bg;
+                background: #d9d9d9;
                 $h: 24px;
                 height: $h;
                 line-height: $h;
@@ -66,11 +66,6 @@
                 padding: 0 16px;
                 margin-right: 12px;
                 margin-top: 4px;
-
-                &.selected {
-                    background: darken($bg, 50%);
-                    color: white;
-                }
             }
         }
 
@@ -86,4 +81,5 @@
             }
         }
     }
-</style>
+
+    </style>

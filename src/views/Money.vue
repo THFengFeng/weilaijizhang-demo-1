@@ -1,9 +1,8 @@
 <template>
     <Layout class-prefix="layout">
         <NumberPad/>
-        <Types/>
+        <Types :xxx="    333     "/>
         <Notes/>
-
         <Tags :data-source.sync="tags"/>
     </Layout>
 </template>
@@ -19,11 +18,14 @@
         components: {Tags, Notes, Types, NumberPad},
         data() {
             return {
-                tags: ['衣', '食', '住', '行', '彩票']
+                tags:  ['衣服','食物','房租','交通',
+                        '彩票','水费','电费','燃气',
+                        '快递','健身','逛街','礼物']
             }
         }
     }
 </script>
+
 <style lang="scss">
     .layout-content {
         display: flex;
