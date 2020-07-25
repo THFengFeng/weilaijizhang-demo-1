@@ -18,9 +18,7 @@
         components: {Tags, Notes, Types, NumberPad},
         data() {
             return {
-                tags:  ['衣服','食物','房租','交通',
-                        '彩票','水费','电费','燃气',
-                        '快递','健身','逛街','礼物']
+                tags: ['衣服', '食物', '房租', '交通']
             }
         }
     }
