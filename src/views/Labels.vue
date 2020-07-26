@@ -1,10 +1,10 @@
-@@ -1,12 +1,73 @@
 <template>
     <Layout>
-        Labels.vue
         <ol class="tags">
             <li :key="tag" v-for="tag in tags">
                 <span>{{tag}}</span>
+            <li :key="tag.id" v-for="tag in tags">
+                <span>{{tag.name}}</span>
                 <Icon name="right"/>
             </li>
         </ol>
