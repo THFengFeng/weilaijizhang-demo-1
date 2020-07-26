@@ -2,9 +2,9 @@
     <div>
         <label class="notes">
             <span class="name">备注</span>
-            <input :value="value" @input="onInput"
-                   placeholder="在这里输入备注"
-                   type="text">
+            <input placeholder="在这里输入备注"
+                   type="text"
+                   v-model="value">
         </label>
     </div>
 </template>
@@ -45,4 +45,3 @@
         }
     }
 </style>
-
