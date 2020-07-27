@@ -3,7 +3,7 @@ type RecordItem = {
     notes: string;
     type: string;
     amount: number; // 数据类型 object | string
-    createAt?: Date; // 类 / 构造函数
+    createdAt?: Date;  // 类 / 构造函数
 }
 type Tag = {
     id: string;
@@ -17,11 +17,12 @@ type TagListModel = {
     remove: (id: string) => boolean;
     save: () => void;
 }
-
 interface Window {
     tagList: Tag[];
     createTag: (name: string) => void;
     findTag: (id: string) => Tag | undefined;
     removeTag: (id: string) => boolean;
     updateTag: (id: string, name: string) => "success" | "not found" | "duplicated";
+    recordList: RecordItem[];
+    createRecord: (record: RecordItem) => void;
 }
