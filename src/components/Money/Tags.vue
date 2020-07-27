@@ -1,14 +1,12 @@
-@@ -1,7 +1,7 @@
 <template>
     <div class="tags">
         <div class="new">
-
             <button @click="create">新增标签</button>
         </div>
         <ul class="current">
-            <li :class="{selected: selectedTags.indexOf(tag)>=0}" :key="tag"
+            <li :class="{selected: selectedTags.indexOf(tag)>=0}" :key="tag.id"
                 @click="toggle(tag)"
-                v-for="tag in dataSource">{{tag}}
+                v-for="tag in dataSource">{{tag.name}}
             </li>
         </ul>
     </div>

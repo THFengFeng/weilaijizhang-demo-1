@@ -5,12 +5,12 @@
             <Icon name="money"/>
             记账
         </router-link>
-        |
+
         <router-link active-class="selected" class="item" to="/labels">
             <Icon name="label"/>
             标签
         </router-link>
-        |
+
         <router-link active-class="selected" class="item" to="/statistics">
             <Icon name="statistics"/>
             统计

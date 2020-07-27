@@ -9,14 +9,13 @@
             </router-link>
         </div>
         <div class="createTag-wrapper">
-            <button @click="createTag"
+            <Button @click="createTag"
                     class="createTag">
                 新建标签
-            </button>
+            </Button>
         </div>
     </Layout>
 </template>
-
 <script lang="ts">
     import Vue from "vue";
     import {Component} from "vue-property-decorator";
