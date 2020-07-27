@@ -3,8 +3,9 @@
         <label class="formItem">
             <span class="name">{{this.fieldName}}</span>
             <input :placeholder="this.placeholder"
-                   type="text"
-                   v-model="value">
+                   :value="value"
+                   @input="onValueChanged($event.target.value)"
+                   type="text">
         </label>
     </div>
 </template>
@@ -15,7 +16,7 @@
 
     @Component
     export default class FormItem extends Vue {
-        @Prop({required: true}) fieldName!: string;
+        @Prop({default: ""}) readonly value!: string;
         @Prop({required: true}) fieldName!: string;
         @Prop() placeholder?: string;
 
