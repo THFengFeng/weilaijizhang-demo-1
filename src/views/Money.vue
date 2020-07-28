@@ -9,8 +9,11 @@
             />
         </div>
         <Tags/>
+        {{count}}
+        <button @click="add">+1</button>
     </Layout>
 </template>
+
 <script lang="ts">
     import Vue from "vue";
     import NumberPad from "@/components/Money/NumberPad.vue";
@@ -18,23 +21,26 @@
     import FormItem from "@/components/Money/FormItem.vue";
     import Tags from "@/components/Money/Tags.vue";
     import {Component} from "vue-property-decorator";
-    import store from "@/store/index2.ts";
+    import oldStore from "@/store/index2.ts";
 
     @Component({
-        components: {Tags, FormItem, Types, NumberPad}
+        components: {Tags, FormItem, Types, NumberPad},
+        computed: {
+            recordList() {
+                return this.$store.state.count;
+            }
+        }
     })
     export default class Money extends Vue {
-        recordList = store.recordList;
+        recordList = oldStore.recordList;
         record: RecordItem = {
             tags: [], notes: "", type: "-", amount: 0
         };
-
         onUpdateNotes(value: string) {
             this.record.notes = value;
         }
-
         saveRecord() {
-            store.createRecord(this.record);
+            oldStore.createRecord(this.record);
         }
     }
 </script>
