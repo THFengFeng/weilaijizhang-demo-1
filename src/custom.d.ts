@@ -1,5 +1,7 @@
 type RootState = {
     recordList: RecordItem[];
+    createRecordError: Error | null;
+    createTgaError: Error | null;
     tagList: Tag[];
     currentTag?: Tag;
 }
